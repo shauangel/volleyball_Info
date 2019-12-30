@@ -2,11 +2,8 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Anime.JS Bouncing Balls</title>
+  <title>the rules of volleyball</title>
   <script type="text/javascript"src="anime.min.js"></script>
-
-
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
     $(document).ready(function(){
@@ -34,10 +31,10 @@
     $(document).ready(function(){
         $(".bot").click(function(){
             $(".1st").show(100);
-            $(".1v").show(3000);
-            $(".1v3").show(3000);
-            $(".1v2").show(3000);
-            $(".1v1").show(3000);
+            $(".1v").show(2000);
+            $(".1v3").show(2000);
+            $(".1v2").show(2000);
+            $(".1v1").show(2000);
             $(".spac").hide(1000);
             $(".space").show(300);
             
@@ -76,16 +73,16 @@
             $(".1v2").hide(100);
             $(".1v3").hide(100);
             $(".spac").hide(1000);
-            $(".bot31").hide(1000);
-            $(".bot32").hide(1000);
-            $(".bot33").hide(1000);
-            $(".bot34").hide(1000);
-            $(".bot35").hide(1000);
-            $(".bot36").hide(1000);
-            $(".bot37").hide(1000);
-            $(".bot38").hide(1000);
-            $(".bot310").hide(1000);
-            $(".bot39").hide(1000);
+            $(".bot31").hide(100);
+            $(".bot32").hide(100);
+            $(".bot33").hide(100);
+            $(".bot34").hide(100);
+            $(".bot35").hide(100);
+            $(".bot36").hide(100);
+            $(".bot37").hide(100);
+            $(".bot38").hide(100);
+            $(".bot310").hide(100);
+            $(".bot39").hide(100);
             $(".setter").hide(1000);
             $(".homepage").hide(1000);
             $(".place").hide(1000);
@@ -103,23 +100,27 @@
             $(".bot3").show(1000);
             $(".setter").show(1000);
             $(".spac").hide(1000);
+            
+            $("#3m1").show(100);
+            $("#3m").hide(100);
+            $("#3m2").hide(100);
             $("span").hide(1000);
             $(".homepage").show(1000);
-        });
+    });
     });   
     $(document).ready(function(){
         $(".bot3").click(function(){
             $(".vo").show(1000);
-            $(".bot31").show(1000);
-            $(".bot32").show(1000);
-            $(".bot33").show(1000);
-            $(".bot34").show(1000);
-            $(".bot35").show(1000);
-            $(".bot36").show(1000);
-            $(".bot37").show(1000);
-            $(".bot38").show(1000);
-            $(".bot39").show(1000);
-            $(".bot310").show(1000);
+            $(".bot31").show(100);
+            $(".bot32").show(100);
+            $(".bot33").show(100);
+            $(".bot34").show(100);
+            $(".bot35").show(100);
+            $(".bot36").show(100);
+            $(".bot37").show(100);
+            $(".bot38").show(100);
+            $(".bot39").show(100);
+            $(".bot310").show(000);
             
         });
     });   
@@ -155,11 +156,11 @@
         background-color: black;
         color: white;
     }
-    .bot:hover,.bot3:hover,.bot2:hover,.bot4:hover{
-        
+    #hh:hover,.homepage:hover,.bot:hover,.bot3:hover,.bot2:hover,.bot4:hover,.bot31:hover,.bot32:hover,.bot33:hover,.bot34:hover,.bot35:hover,.bot36:hover,.bot37:hover,.bot38:hover,.bot39:hover,.bot310:hover{
         background-color: black;
         color: white;    
     }
+ 
     .box:hover{
         background-color: black;
         color: white;    
@@ -187,26 +188,28 @@
     .spac{
         display: none;
         font-size: 60px;
-        float: left;
         width: 33%;
         height: 200px;
-        position: relative;
-        left:-80px;
+        float: left;
+        width: 33%;
     }
     span{
         border: 5px navy solid;
         border-radius: 100%;
-        position: relative;
+        float: right;
+        position: absolute;
         top:50px;
-        left:150px;
+        left:40%;
     }
    </style>
 </head>
 
 <body>
+    <div id='hh'style="font-size: 40px;float:right;border:2px black solid;border-radius:45px;padding:2px;right:10px"onclick='javascript:location.href="index.html"'>首頁</div> 
+    
     <div class="1"style="visibility: hidden;height: 100px;">21312</div>
+    
     <hr size="6px" color='black' width='100%' top="10px">
-    <div class='2'style="visibility: hidden;height:400px;width: 10%;float: left;">21312</div>
     
     <div class="ab"style="border:4px black solid;width:275px;float: left;">
         <p class="rule"style="font-size: 60px;position: relative;border:3px black solid;border-radius: 45px;padding: 6px;width:250px;">排球規則</p>
@@ -216,8 +219,10 @@
     </div>
     
     <div class="rl"style="position:relative;border:2px black solid;margin:8px;float:right">
+        
         <h1><a href="http://peo.dsa.fju.edu.tw/%20file/teachers/teachers-3/andy/vball_rules.html"target="_blank" style="color:black;text-decoration: none;margin: 10px;"title="點擊查看更詳細的規則">基本規則</a></h1>
         <ul style="font-size:20px;line-height: 30px;background-image: repeating-linear-gradient(white 0px, white 28px, teal 30px);">
+            
             <li>比賽特性</li>
             <ol>
                 <li>排球比賽是由兩隊球員在以球網隔開的場地上進行比賽的一種團隊競技。</li>
@@ -297,11 +302,20 @@
             </ol>
         </ul>
     </div>
-    <div class="place" style="display:none;border:3px black solid;width: 80%;float: left;">
+    
+    <a href="https://www.instagram.com/invites/contact/?i=1iak1scnj4a7j&utm_content=66e952a"target="_blank">
+    <img title="點我點我點我!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"class="pa"src="ppa.png"style="float:right;position:absolute;top:23%;right:7%;width:400px;"></a> 
+    <div class="place" style="display:none;border:3px black solid;width: 80%;float: left;left: 10%;right:10%">
         <div style="border:3px black solid;width:100%;text-align:center">此為球網</div>
+        <div class='setter'style="font-size: 50px;display: none;width: 70px;border-radius: 45px;border:px navy solid;text-align:center;color:navy;position:relative;top:10px;left:47%;right:48%">舉</div>
+        
+        <hr id='3m1' TITLE="我是三米線"width="100%" style="border:3px dashed black;display:none;bottom: 50%;position: absolute; ">
+    <div class="1st"style="display: none;position:absolute;font-size:30px;right:20%;top:70%;width:150px">發球員-></div>
+        <div class='setter'style="width:80px;display:none;position:relative;left:47%;top:-25px;"><img src="volley.png"class='vo'width='80px'></div>
         <div class="space"><span>4</span></div>
         <div class="space"><span>3</span></div>
         <div class="space"><span>2</span></div>
+        
         <hr id='3m' TITLE="我是三米線"width="100%" style="border:3px dashed black ">
         <div class="space"><span>5</span></div>
         <div class="space"><span>6</span></div>
@@ -316,45 +330,40 @@
             <div class="spac"><span>自由</span></div>
             <div class="spac"><span>主攻</span></div>
 
+            <img class="1v"src="roll.png"style="width:60px;display:none;position:absolute;left:90%;top:75%">
+            <img class="1v1"src="roll1.png"style="width:60px;display:none;position:absolute;left:5%;top:75%">
+            <img class="1v2"src="roll2.png"style="width:60px;display:none;position:absolute;left:5%;top:10%">
+            <img class="1v3"src="roll3.png"style="width:60px;display:none;position:absolute;left:90%;top:10%">
     </div>
     
-    
-    <img class="pa"src="ruler.png"style="float:left;margin-left: -100px;margin-top: 1500px;height:500px">  
-    <img class='pa'src="pen.png"style="float:left;margin-left:-450px;margin-top: 1500px;height:600px">
+   
+    <img class="pa"src="ruler.png"style="float:left;margin-left: -50px;position:absolute;top:280%;height:500px">  
+    <img class='pa'src="pen.png"style="float:left;margin-left:-350px;top:280%;position:absolute;height:600px">
     
   
-    <a href="https://www.instagram.com/invites/contact/?i=1iak1scnj4a7j&utm_content=66e952a"target="_blank">
-    <img title="點我點我點我!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"class="pa"src="ppa.png"style="float:left;position:relative;left: 780px;top: -700px;width:400px;"></a>  
-    <div class="homepage"style="display:none;float:right;position:relative;top:-100px;right:10px;border:2px black solid;border-radius:45px;padding:2px">回主畫面</div>
+     
+    <div class="homepage"style="display:none;float:right;position:relative;top:-70px;right:10px;font-size:40px;border:2px black solid;border-radius:45px;padding:2px">規則</div>
     <div class='bot'style="display: none;font-size:30px;width:150px;position:relative;margin-top:-80px;right:-150px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">輪轉方向</div>
     <div class='bot2'style="display: none;position:relative;font-size:30px;width:150px;margin-top:-40px;right:-300px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">球員站位</div>
     
     <div class='bot3'style="display: none;font-size:30px;width:150px;position:relative;margin-top:-80px;right:-150px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">進攻戰術</div>
-
-    <div class='bot31'onclick="choose('1')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:-0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">A式快攻</div>
-    <div class='bot32'onclick="choose('2')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:-0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">B式快攻</div>
-    <div class='bot33'onclick="choose('3')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">C式快攻</div>
-    <div class='bot34'onclick="choose('4')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">D式快攻</div>
-    <div class='bot37'onclick="choose('7')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:00px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">4號</div>
-    <div class='bot38'onclick="choose('8')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">6號</div>
-    <div class='bot39'onclick="choose('9')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">老大</div>
-    
-    <div class='bot37'onclick="choose('5')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:00px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">老二</div>
-    <div class='bot38'onclick="choose('6')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">老三</div>
-    <div class='bot310'onclick="choose('10')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">回原位</div>
-    
-    <img src="volley.png"style="width:80px;display:none;display:none;position:relative;right:540px;bottom:270px"class='vo'>
-    <div class="1st"style="display: none;position:relative;font-size:30px;left:800px;top:350px;width:150px">發球員-></div>
-    <img class="1v"src="roll.png"style="width:120px;display:none;position:relative;left:-130px;top:280px">
-    <img class="1v1"src="roll1.png"style="width:120px;display:none;position:relative;left:-950px;top:140px">
-    <img class="1v2"src="roll2.png"style="width:120px;display:none;position:relative;left:-950px;top:-230px">
-    <img class="1v3"src="roll3.png"style="width:120px;display:none;position:relative;left:-130px;top:-350px">
-    <div class='setter'style="font-size: 50px;display: none;width: 70px;border-radius: 45px;border:px navy solid;text-align:center;color:navy;position:relative;top:-400px;left:580px;">舉</div>
+   
+        <div class='bot31'onclick="choose('1')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:130px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">A式快攻</div><br>
+        <div class='bot32'onclick="choose('2')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:160px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">B式快攻</div><br>
+        <div class='bot33'onclick="choose('3')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:190px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">C式快攻</div><br>
+        <div class='bot34'onclick="choose('4')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:220px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">D式快攻</div><br>
+        <div class='bot35'onclick="choose('7')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:250px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">4號</div><br>
+        <div class='bot36'onclick="choose('8')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:280px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">6號</div><br>
+        <div class='bot37'onclick="choose('9')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:310px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">老大</div><br>
+        <div class='bot38'onclick="choose('5')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:340px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">老二</div><br>
+        <div class='bot39'onclick="choose('6')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:370px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">老三</div><br>
+        <div class='bot310'onclick="choose('10')"style="display: none;right:0%;font-size:20px;width:80px;position:absolute;top:400px;right:10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">回原位</div><br>
+      
     <script>
         function choose(num){
         if (num==1){
             var dis=-80;
-            var di=0;
+            var di=-30;
         }
         if (num==10){
             var dis=0;
@@ -362,15 +371,15 @@
         }
         if (num==2){
             var dis=-300;
-            var di=0;
+            var di=-30;
         }
         if (num==3){
             var dis=80;
-            var di=0;
+            var di=-30;
         }
         if (num==4){
             var dis=300;
-            var di=0;
+            var di=-30;
         }
         
         if (num==7){
@@ -383,20 +392,20 @@
         }
         if (num==9){
             var dis=350;
-            var di=200;
+            var di=250;
         }
         if (num==5){
             var dis=0;
-            var di=200;
+            var di=250;
         }
         if (num==6){
             var dis=-350;
-            var di=200;
+            var di=250;
         }
         var server=anime({
         targets: '.vo',
-        translateX: ['0',dis+'px'],
-        translateY:['0', di+'px'],
+        translateX: ['0',dis+'%'],
+        translateY:['0', di+'%'],
         rotate: '1turn'
         });
     }</script>

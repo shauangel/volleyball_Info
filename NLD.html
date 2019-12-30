@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Netherlands</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+          $("#1bo").click(function(){
+            $(".11").toggle();
+          });
+          $("#2bo").click(function(){
+            $(".12").toggle();
+          });
+          $("#3bo").click(function(){
+            $(".13").toggle();
+          });
+        });
+        </script>
+        <style type="text/css">
+        @import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+        @keyframes  swing  {
+            15% { transform:  translateX(5px); }
+            40% { transform:  translateX(-5px); }
+            65% { transform:  translateX(2px); }
+            85% { transform:  translateX(-2px); }
+            100% { transform:  translateX(0px); }
+	    }
+        @font-face{
+                font-family: setofont;
+                src: url(setofont.ttf)
+            }
+        iframe{
+            align:center;
+        }
+        html{
+            font-family: setofont, serif;
+        }
+        h1{
+            font-size: 100px; 
+            text-align: center;
+        }
+        .ww{
+        }
+        .ty{
+            float: left;
+            position: static;
+            font-size: 70px; 
+            width: 100%;
+            text-align: center;
+            padding: 2px;
+            line-height:80PX ;
+        }
+        #info{
+            color:navy;
+            float:left;
+            border:2px cornflowerblue solid;
+            width:31%;
+            font-size: 30px;
+            line-height:60px;
+            margin: 5px;
+            background-color:lightgoldenrodyellow;
+            text-align: center;
+            opacity:0.5;
+        }
+            
+        #info:hover{
+            color:navy;
+            float:left;
+            border-radius: 25px;
+            border:2px cornflowerblue solid;
+            width:31%;
+            font-size: 40px;
+            line-height:70px;
+            background-color:lightgoldenrodyellow;
+            text-align: center;
+            opacity:1;
+            animation : swing 1s 1;
+        }
+            
+        #space{
+            color:navy;
+            float:left;
+            border:2px black groove;
+            width:60px;
+            margin: 5px;
+            font-size: 40px;
+            border-radius: 25px;
+            text-align: center;
+        }
+            
+        #pic {
+            float: left;
+            width:50%;
+            height: 320PX;
+            display:flex;
+            align-items:center;
+        }
+            
+        #who{
+            list-style-type: disc;
+            float:left;
+            color:navy;
+            text-align: left;
+            font-size: 18PX;
+        }
+            
+        .oo{
+            position: relative;;
+            float:left;
+            width:49.65%;
+            height: 340px;
+            padding:2px;
+        }
+            
+        #flag{
+            border:2px navy groove;
+            width:200px;
+            top: 50%;
+            left: 42%;
+            position: relative;
+            margin: 0;
+        }
+        h1{
+            margin: 0px 0px 10px 0px;
+        }
+        .volley{
+            width:2em;
+        }
+        .win{
+            vertical-align: sub;
+            position:static;
+            float:left;
+            width:32%;
+            border:10px orange solid;
+        }
+        
+        #aboutsecret{
+            float: none;
+        }
+        </style>
+        <script language="javascript">
+            function win3(){
+                var input=window.prompt("銅牌輸入1 其他輸入2","input");
+                if (input==1)window.alert("2016世界女排大獎賽榮獲季軍");
+                else if(input==2)window.alert("奧運最佳戰績:2016年榮獲第四名");
+            }
+        </script>
+           
+    </head>
+<body>
+    <h1><a name="four">荷蘭女排</a></h1>
+    <div id="flag"><img src="Netherlands.svg" width="200px"></div><br><br>
+    <div id="aboutsecret" style=" font-size:20px;text-align: center;line-height: 50px;">
+        荷蘭女排是典型的歐洲型打法，<BR>球員普遍身材高大，扣球點高力量大，同時也兼具一定的兩邊拉開的速度。<BR>2006年、2007年，荷蘭女排曾經強勢崛起，2008年沒能進軍北京奧運，<BR>之後的倫敦奧運周期面臨青黃不接，一度消沉。<BR>2015年義大利籍主教練喬瓦尼·吉德提接手荷蘭女排，在他的帶領下進步很快，<BR>在2016年里約奧運會上獲得第四名，創隊史的最佳成績。
+    </div>
+    
+    <div id="info" ><a href="#fir"style="color:navy;text-decoration:none;">球員資料</a></div>
+    <div id="info" ><a href="#sec"style="color:navy;text-decoration:none;">歷史戰績</a></div>
+    <div id="info" ><a href="#th"style="color:navy;text-decoration:none;">精彩片段</a></div><br><br><br><br>
+    
+    <hr size="6px" width="100%" color="lightgray">
+    <DIV CLASS="ty"><a name="fir">球員資料</a></DIV>
+    <div style="font-size: 20px;text-align: center;">  此為荷蘭女排現時陣容 移動游標查看詳細資料</div><br><br>    
+    <div class="oo">
+            <img src="spike.png" id="pic">
+        <div id="space"title="通常都打長攻，以強大的火力或穩定的處理能力來得分。" >主攻</div>
+     
+            <ul id="who">
+                <li id="member" title="背號:4  生日:1995/10/26">Celeste Plak</li>
+                <li id="member" title="背號:6  生日:1988/09/16">Maret Balkestein-Grothues</li>
+                <li id="member" title="背號:10  生日:1990/11/15">Lonneke Slöetjes</li>
+                <li id="member" title="背號:11  生日:1991/12/02">Anne Buijs</li>                      
+            </ul>
+    </div>
+    <div class="oo">
+            <img src="middle.png"id="pic"> 
+            <div id="space"title="通常都打快攻（或２號），以速度得分。" >副攻</div>
+       
+        <ul id="who">
+            <li id="member" title="背號:3  生日:1993/12/28">Yvon Beliën</li>
+            <li id="member" title="背號:5  生日:1991/05/05">Robin de Kruijf</li>
+            <li id="member" title="背號:7  生日:1996/09/10">Juliet Lohuis</li>
+            <li id="member" title="背號:20  生日:1997/10/10">Tessa Polder</li>
+            <li id="member" title="背號:22  生日:1991/01/31">Nicole Koolhaas</li>
+        </ul>
+    </div>
+    <br><br><br>
+    <div class="oo">
+            <img src="setter.png"id="pic"> 
+        <div id="space"title="顧名思義就是將第二球傳給攻擊手，讓他們攻擊。" >二傳</div>
+       
+        <ul id="who">
+                <li id="member" title="背號:14  生日:1990/02/18">Laura Chantal Dijkema</li>
+        </ul>
+    </div>
+    <div class="oo">
+            <img src="libero.png"id="pic">
+        <div id="space"title="守備範圍非常大，移動速度飛快，可以cover全場。" >自由球員</div>
+        <ul id="who">
+            <li id="member" title="背號:1  生日:1992/09/14">Kirsten Knip</li>        
+            <li id="member" title="背號:9  生日:1988/08/29">Myrthe Schoot</li>
+            </ul>
+    </div>
+    <br><br><br>
+    
+    <div id="info"style="float:right;width:120px" ><a href="#four"style="color:navy;text-decoration:none;">回頁首</a></div>
+    <hr size="6px" width="100%" color="lightgray">
+    
+    <div class="ty"><a name="sec">歷史戰績</a></div>
+    <br><br><br><br><br><br><br><br>
+    <div style="border:5px lightsalmon solid;width: 55%;">
+        <img src="1ST.png"style="width:400px;border:none;"class="win">
+            <p style="font-size: 40px;line-height: 41px;">最佳紀錄</p>
+            <DIV style="font-size: 30PX;color:sandybrown;">2007世界女排大獎賽</DIV>
+            <p style="font-size: 80px;color:orange;position: relative;top:-50px">冠軍</p>
+    </div>
+    <br><br><br><br>
+    <div style="border:5px lightsalmon solid;width: 55%;height: 400px;">
+    <img src="PRIZE.png"style="width:400px;border:none;"class="win">
+        <p style="font-size: 40px;line-height: 41px;">其他紀錄</p>
+        <p style="font-size: 50px;color:orange;position: relative;top:-50px">請按"紀錄"</p>
+        <input style="outline: none;font-family:微軟正黑體;position: relative;left:200px;bottom:80px;"type="button" onclick="win3()" value="紀錄">
+
+   </div>
+
+
+   <img src="fivb.svg"style="width:600px;float:left">
+   <p style="font-size: 40px;line-height: 41px;float: left;">FIVB排名</p>
+   <p style="font-size: 100px;color:navy;position: relative;top:100px;float: left;">第8名</p>
+
+<div id="info"style="float:right;width:120px;position:relative;top:300px;" ><a href="#four"style="color:navy;text-decoration:none;">回頁首</a></div>
+<hr size="6px" width="100%" color="lightgray">
+    <div class="ty"><a name="th">精彩片段</a></div>
+    <iframe width="700" height="394" src="https://www.youtube.com/embed/LQDpiJXwfGY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </body>
+    </html>
