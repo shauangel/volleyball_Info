@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Anime.JS Bouncing Balls</title>
+  <script type="text/javascript"src="anime.min.js"></script>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $(".rule").click(function(){
+            $(".box").toggle(1000);
+            $(".box2").toggle(1000);
+            $(".eng").toggle(1000);
+        });
+    });     
+    $(document).ready(function(){
+        $(".box").click(function(){
+            $(".rl").hide(1000);
+            $(".pa").hide(1000);
+            $(".ab").hide(1000);
+            $(".place").show(1000);
+            $(".space").show(1000);
+            $("span").show(1000);
+            $(".bot").show(1000);
+            $("#3m2").hide(100);
+            $(".bot2").show(1000);
+            $(".homepage").show(1000);
+            
+        });
+    });   
+    $(document).ready(function(){
+        $(".bot").click(function(){
+            $(".1st").show(100);
+            $(".1v").show(3000);
+            $(".1v3").show(3000);
+            $(".1v2").show(3000);
+            $(".1v1").show(3000);
+            $(".spac").hide(1000);
+            $(".space").show(300);
+            
+            $("#3m2").hide(100);
+        }); 
+    });
+    $(document).ready(function(){
+        $(".bot2").click(function(){
+            
+            $("#3m").hide(100);
+            $(".1st").hide(100);
+            $(".1v").hide(100);
+            $(".1v3").hide(100);
+            $(".1v2").hide(100);
+            $(".1v1").hide(100);
+            $(".space").hide(01000);
+            $(".spac").show(1000);
+        }); 
+    });
+    $(document).ready(function(){
+        $(".homepage").click(function(){
+            $(".ab").show(1000);
+            $(".rl").show(1000);
+            $(".pa").show(1000);
+            $("#3m2").hide(100);
+            $(".vo").hide(100);
+            $("#3m").hide(100);
+            $(".1st").hide(1000);
+            $(".bot3").hide(1000);
+            $(".bot4").hide(1000);
+            $(".bot").hide(1000);
+            $(".bot2").hide(1000);
+            $(".space").hide(1000);
+            $(".1v").hide(100);
+            $(".1v1").hide(100);
+            $(".1v2").hide(100);
+            $(".1v3").hide(100);
+            $(".spac").hide(1000);
+            $(".bot31").hide(1000);
+            $(".bot32").hide(1000);
+            $(".bot33").hide(1000);
+            $(".bot34").hide(1000);
+            $(".bot35").hide(1000);
+            $(".bot36").hide(1000);
+            $(".bot37").hide(1000);
+            $(".bot38").hide(1000);
+            $(".bot310").hide(1000);
+            $(".bot39").hide(1000);
+            $(".setter").hide(1000);
+            $(".homepage").hide(1000);
+            $(".place").hide(1000);
+            
+        }); 
+    });
+    $(document).ready(function(){
+        $(".box2").click(function(){
+            $(".rl").hide(1000);
+            $(".ab").hide(1000); 
+            $(".pa").hide(1000);
+            $(".place").show(1000);
+            $(".space").show(1000);
+            $(".bot4").show(1000);
+            $(".bot3").show(1000);
+            $(".setter").show(1000);
+            $(".spac").hide(1000);
+            $("span").hide(1000);
+            $(".homepage").show(1000);
+        });
+    });   
+    $(document).ready(function(){
+        $(".bot3").click(function(){
+            $(".vo").show(1000);
+            $(".bot31").show(1000);
+            $(".bot32").show(1000);
+            $(".bot33").show(1000);
+            $(".bot34").show(1000);
+            $(".bot35").show(1000);
+            $(".bot36").show(1000);
+            $(".bot37").show(1000);
+            $(".bot38").show(1000);
+            $(".bot39").show(1000);
+            $(".bot310").show(1000);
+            
+        });
+    });   
+  </script>
+  <style type="text/css">
+    @font-face{
+            font-family: setofont;
+            src: url(setofont.ttf)
+    }
+    html{
+        font-family: setofont,serif;
+    }
+  
+    div{
+    box-sizing:border-box;
+    position:relative;
+    }
+
+    
+
+    </style>
+   <style type="text/css">
+    mark.yellow {
+        background: linear-gradient(transparent 40%,rgba(255,255,255,0) 40%, #FFF176 90%,transparent 95%);	
+        padding: 2px 1px;
+    }
+    
+    .rl{
+        width: 60%;
+        float:left;
+    }
+    .rule:hover{
+        background-color: black;
+        color: white;
+    }
+    .bot:hover,.bot3:hover,.bot2:hover,.bot4:hover{
+        
+        background-color: black;
+        color: white;    
+    }
+    .box:hover{
+        background-color: black;
+        color: white;    
+    }
+    .box2:hover{
+        background-color: black;
+        color: white;    
+    }
+    .space{
+        display: none;
+        font-size: 80px;
+        float: left;
+        width: 33%;
+        height: 200px;
+    }
+    .at{
+        display: none;
+        background-color: white;
+        color: black;
+        position: relative;
+        width: 35px;
+        height: 30px;
+        border: 5px white solid;
+    }
+    .spac{
+        display: none;
+        font-size: 60px;
+        float: left;
+        width: 33%;
+        height: 200px;
+        position: relative;
+        left:-80px;
+    }
+    span{
+        border: 5px navy solid;
+        border-radius: 100%;
+        position: relative;
+        top:50px;
+        left:150px;
+    }
+   </style>
+</head>
+
+<body>
+    <div class="1"style="visibility: hidden;height: 100px;">21312</div>
+    <hr size="6px" color='black' width='100%' top="10px">
+    <div class='2'style="visibility: hidden;height:400px;width: 10%;float: left;">21312</div>
+    
+    <div class="ab"style="border:4px black solid;width:275px;float: left;">
+        <p class="rule"style="font-size: 60px;position: relative;border:3px black solid;border-radius: 45px;padding: 6px;width:250px;">排球規則</p>
+        <p class="eng"style="font-size:20px;text-align:center;">the rules of volleyball</p>
+        <div class="box"style="width:270px;display:none;border:3px black solid;border-radius: 45px;padding: 6px;font-size:40px">隊員站位</div>
+        <div class="box2"style="width:270px;display:none;border:3px black solid;border-radius: 45px;padding: 6px;font-size:40px">陣型戰術</div>
+    </div>
+    
+    <div class="rl"style="position:relative;border:2px black solid;margin:8px;float:right">
+        <h1><a href="http://peo.dsa.fju.edu.tw/%20file/teachers/teachers-3/andy/vball_rules.html"target="_blank" style="color:black;text-decoration: none;margin: 10px;"title="點擊查看更詳細的規則">基本規則</a></h1>
+        <ul style="font-size:20px;line-height: 30px;background-image: repeating-linear-gradient(white 0px, white 28px, teal 30px);">
+            <li>比賽特性</li>
+            <ol>
+                <li>排球比賽是由兩隊球員在以球網隔開的場地上進行比賽的一種團隊競技。</li>
+                <li>比賽的目標，是要將球擊球過網，使其落在對方球場的地面，並防止對方將球擊落在本方球場地面，<br>每隊有<mark class="yellow">三次機會</mark>將球擊回對區（攔網觸球除外）。</li>
+                <li>比賽是由發球開始：發球員擊球過網，展開雙方來回對擊，直到<mark class="yellow">球落地出界</mark>、或某隊<mark class="yellow">未能合法將球擊回對區</mark>為止。</li>
+                <li>排球比賽中，球隊贏得一球即獲得一分（得球得分制），當接發球隊贏得一球時，則該隊得一分並得到發球權。</li>
+            
+                            
+                <li>得分方式：（得一分）當球隊犯規時，裁判鳴笛，並依據下列規責處罰：</li>
+                <ol>
+                    <LI>如果有二次以上連續犯規發生，只算第一次犯規。</LI>
+                    <LI>如果雙方犯規同時發生，稱雙方犯規，該球不計，重新比賽。</LI>
+                </ol>
+                <li>犯規結果：犯規的結果，則失一分：</li>
+                <OL>
+                    <li>若接球隊犯規，則發球隊得一分且繼續擁有發球權。</li>
+                    <li>發球隊犯規，則對隊得一分且得到發球權。</li>
+                </OL>
+                <li>勝一局：<br>第一局至第四局，先<mark class="yellow">獲得25分</mark>並至少領先2分勝一局（第五局除外）<br>若比數24：24時，則必須<mark class="yellow">領先對隊2分</mark>為勝一局。（例26：24、27：25）</li>
+                <li>勝一場</li>
+                <ol>
+                    <li>獲勝三局之球隊為該場比賽的勝隊。</li>
+                    <li>若局數2：2時，在<mark class="yellow">決勝局（第五局）之比賽，先獲15分並領先對隊2分</mark>為勝。</li>
+                    <li>球隊未出場及陣容不完整</li>
+                </ol>
+             
+            </ol>
+            <li>犯規</li>
+            <ol>
+                <li><mark class="yellow">四擊</mark>：球隊在擊球回對隊場區前觸球四次。</li>
+                <li><mark class="yellow">藉助擊球</mark>：在比賽區域內，以隊友或任何建造物之物體作為擊球的支撐。</li>
+                <li><mark class="yellow">持球</mark>：未能清晰的擊球而是用持球、擲球。</li>
+                <li><mark class="yellow">連擊</mark>：球員連續擊球二次或球連續觸及身體的數個部。</li>
+                <li><mark class="yellow">越界</mark>：<br>准許單（雙）足觸及對方場地，但侵入對方場地的單（雙）足，須仍有一部分與中線接觸或在中線的正上方</li>
+                <li><mark class="yellow">觸網</mark>：</li>
+                <ol>
+                    <li>球員無企圖擊該球或妨礙比賽而觸及球網或標誌竿，不視為犯規。</li>
+                    <li>球員一旦擊球後，可觸及球網全長以外的網柱、繩子或其他物體，但不得妨礙比賽。</li>
+                    <li>若球被擊入網，並致使球網觸及對方球員，不作為犯規。</li>
+                </ol>
+                    <li><mark class="yellow">輪轉錯誤</mark>：當接球未按照輪轉順序進行時，即為輪轉錯誤。</li>
+                    <ol>
+                        <li>輪轉錯誤的球隊應判喪失發球權，並由對隊得一分。且擁有發球權。</li>
+                        <li>改正輪轉順序。</li>
+                     </ol>
+                <li><mark class="yellow">發球犯規</mark>：即使在對方位置錯誤的情況下，下列的犯規則成為換邊發球。</li>
+                <ol>
+                    <li>違反發球順序。</li>
+                    <li>未按規定執行發球。</li>
+            </ol>
+            <li>自由球員</li>
+            <ol>
+                <li>裝備：</li>
+                <ol>自由球員必須穿著與其他明顯不同顏色或不同樣式的比賽服。（並為再指定之自由球員準備上衣）但必須像其他球員有號碼。</ol>
+                <li>比賽行為</li>
+                <ol>
+                    <li>自由防守球員可以和任何一位後排球員交換。</li>
+                    <li>自由防守球員只能扮演後排球員的角色，並且不能將高於網上端的球擊向對區（含場內及無障礙區）。</li>
+                    <li>自由防守球員不得發球、攔網或試圖攔網。</li>
+                    <li>自由防守球員於前區及延長區域內，使用高手手指傳球時，則隊友不得將對於網上端的球完成攻擊。</li>
+                    <li>如果自由防守於後區以高手手指傳球時，則隊友可以任意擊球。</li>
+                 </ol>
+                <li>球員交換</li>
+                <ol>
+                    <li>自由防守球員的交換不計為合法正常替補次數，其交換次數、對象不限，但其退場必須和原球員相互交換，再交
+                    換時必須經過一次死球。</li>
+                    <li>交換時機須於發球之鳴笛前：每局開賽前第二裁判查驗陣容單之後，或在比賽中成死球時。</li>
+                    <li>自由防守球員不得發球、攔網或試圖攔網。</li>
+                    <li>自由防守球員於前區及延長區域內，使用高手手指傳球時，則隊友不得將對於網上端的球完成攻擊。</li>
+                    <li>如果自由防守於後區以高手手指傳球時，則隊友可以任意擊球。</li>
+                </ol>
+                <li>再指定一名新自由防守球員：</li>
+                <ol>
+                <li>指定自由防守球員受傷時，先經第一裁判的允許，教練得再指定一名當時在場外的球員擔任新自由防守球員，受
+                傷自由防守球員不得再參與該場所剩下的比賽。</li>
+                <li>因此，再指定自由防守球員，在該場所剩下的比賽必須擔任自由防守球員職務。</li>
+            </ol>
+        </ul>
+    </div>
+    <div class="place" style="display:none;border:3px black solid;width: 80%;float: left;">
+        <div style="border:3px black solid;width:100%;text-align:center">此為球網</div>
+        <div class="space"><span>4</span></div>
+        <div class="space"><span>3</span></div>
+        <div class="space"><span>2</span></div>
+        <hr id='3m' TITLE="我是三米線"width="100%" style="border:3px dashed black ">
+        <div class="space"><span>5</span></div>
+        <div class="space"><span>6</span></div>
+        <div class="space"><span>1</span></div>
+    
+            <div class="spac"><span>主攻</span></div>
+            <div class="spac"><span>攔中</span></div>
+            <div class="spac"><span>舉球</span></div>
+            
+        <hr id='3m2' TITLE="我是三米線"width="100%" style="border:3px dashed black ">
+            <div class="spac"><span>舉對</span></div>
+            <div class="spac"><span>自由</span></div>
+            <div class="spac"><span>主攻</span></div>
+
+    </div>
+    
+    
+    <img class="pa"src="ruler.png"style="float:left;margin-left: -100px;margin-top: 1500px;height:500px">  
+    <img class='pa'src="pen.png"style="float:left;margin-left:-450px;margin-top: 1500px;height:600px">
+    
+  
+    <a href="https://www.instagram.com/invites/contact/?i=1iak1scnj4a7j&utm_content=66e952a"target="_blank">
+    <img title="點我點我點我!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"class="pa"src="ppa.png"style="float:left;position:relative;left: 780px;top: -700px;width:400px;"></a>  
+    <div class="homepage"style="display:none;float:right;position:relative;top:-100px;right:10px;border:2px black solid;border-radius:45px;padding:2px">回主畫面</div>
+    <div class='bot'style="display: none;font-size:30px;width:150px;position:relative;margin-top:-80px;right:-150px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">輪轉方向</div>
+    <div class='bot2'style="display: none;position:relative;font-size:30px;width:150px;margin-top:-40px;right:-300px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">球員站位</div>
+    
+    <div class='bot3'style="display: none;font-size:30px;width:150px;position:relative;margin-top:-80px;right:-150px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">進攻戰術</div>
+
+    <div class='bot31'onclick="choose('1')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:-0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">A式快攻</div>
+    <div class='bot32'onclick="choose('2')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:-0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">B式快攻</div>
+    <div class='bot33'onclick="choose('3')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">C式快攻</div>
+    <div class='bot34'onclick="choose('4')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">D式快攻</div>
+    <div class='bot37'onclick="choose('7')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:00px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">4號</div>
+    <div class='bot38'onclick="choose('8')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">6號</div>
+    <div class='bot39'onclick="choose('9')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">老大</div>
+    
+    <div class='bot37'onclick="choose('5')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:00px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">老二</div>
+    <div class='bot38'onclick="choose('6')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">老三</div>
+    <div class='bot310'onclick="choose('10')"style="display: none;float:left;font-size:20px;width:100px;position:relative;margin-top:0px;right:-10px;border:2px black solid;border-radius:45px;text-align:center;padding:2px">回原位</div>
+    
+    <img src="volley.png"style="width:80px;display:none;display:none;position:relative;right:540px;bottom:270px"class='vo'>
+    <div class="1st"style="display: none;position:relative;font-size:30px;left:800px;top:350px;width:150px">發球員-></div>
+    <img class="1v"src="roll.png"style="width:120px;display:none;position:relative;left:-130px;top:280px">
+    <img class="1v1"src="roll1.png"style="width:120px;display:none;position:relative;left:-950px;top:140px">
+    <img class="1v2"src="roll2.png"style="width:120px;display:none;position:relative;left:-950px;top:-230px">
+    <img class="1v3"src="roll3.png"style="width:120px;display:none;position:relative;left:-130px;top:-350px">
+    <div class='setter'style="font-size: 50px;display: none;width: 70px;border-radius: 45px;border:px navy solid;text-align:center;color:navy;position:relative;top:-400px;left:580px;">舉</div>
+    <script>
+        function choose(num){
+        if (num==1){
+            var dis=-80;
+            var di=0;
+        }
+        if (num==10){
+            var dis=0;
+            var di=0;
+        }
+        if (num==2){
+            var dis=-300;
+            var di=0;
+        }
+        if (num==3){
+            var dis=80;
+            var di=0;
+        }
+        if (num==4){
+            var dis=300;
+            var di=0;
+        }
+        
+        if (num==7){
+            var dis=-450;
+            var di=0;
+        }
+        if (num==8){
+            var dis=450;
+            var di=0;
+        }
+        if (num==9){
+            var dis=350;
+            var di=200;
+        }
+        if (num==5){
+            var dis=0;
+            var di=200;
+        }
+        if (num==6){
+            var dis=-350;
+            var di=200;
+        }
+        var server=anime({
+        targets: '.vo',
+        translateX: ['0',dis+'px'],
+        translateY:['0', di+'px'],
+        rotate: '1turn'
+        });
+    }</script>
+    
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+.frame{
+    display: none;
+    width: 1000px;
+    height: 600px;
+    background-color: snow;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+    margin-top: 50px;
+    border-radius: 10px;
+    border:3px dotted black;
+}
+
+@font-face{
+    font-family: setofont;
+    src: url(setofont.ttf);
+}
+
+@font-face{
+    font-family: noto;
+    src: url(NotoSansCJKtc-Bold.otf);
+}
+
+
+.button{
+    -webkit-appearance: none;
+    width: 90px;
+    height: 50px;
+    font-size: 20px;
+    font-family: setofont;
+    background-color: black;
+    border-color: white;
+    border-width: 2px;
+    color: white;
+    display: inline-block;
+    border-radius: 25px;
+    box-shadow: 0 7px #999;
+}
+
+.button:hover{
+    background-color: #2B2B2B;
+}
+
+.button:active{
+    background-color: #2B2B2B;
+    box-shadow: 0 1px #999;
+    transform: translateY(4px);
+}
+
+mark.yellow{
+    background: linear-gradient(transparent 40%, rgba(255,255,255,0) 40%, #FFF176 90%, transparent 95%);
+    padding: 2px 1px;
+}
+
+
+
+

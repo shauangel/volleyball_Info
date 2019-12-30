@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> 發展史 </title>
+        <script type="text/javascript" src="anime.min.js"></script>
+        <script type="text/javascript" src="jquery-3.4.1.js"></script>
+        <script type="text/javascript" src="d3/d3.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="test.css">
+        <style>
+            
+            body{
+                overflow-x: hidden;
+                background-color: black;
+            }
+            
+            /*top 選單*/
+            #toptitle{
+                width: 100%;
+                height: 30px;
+                margin: 0px;
+                padding: 10px;
+            }
+            
+            #div1{
+                width: 200px;
+                position: absolute;
+                left: 20%;
+            }
+            
+            #div2{
+                width: 200px;
+                position: absolute;
+                left: 50%;
+                margin-left: -100px;
+            }
+            
+            #div3{
+                width: 200px;
+                position: absolute;
+                right: 20%;
+            }
+            
+            /*starting word*/
+            #startword{
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-top: -150px;
+                margin-left: -480px;
+            }
+            
+            .ml5{
+                position: absolute;
+                left: 50%;
+                margin-left: -590px;
+                font-size: 100px;
+                font-family: setofont;
+                color: white;
+            }
+            
+            .ml5 .text-wrapper{
+                position: relative;
+                display: inline-block;
+                padding-top: 0.1em;
+                padding-right: 0.05em;
+                padding-bottom: 0.15em;
+                line-height: 1em;
+            }
+            
+            .ml5 .line{
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                height: 5px;
+                width: 100%;
+                border-radius: 5px;
+                background-color: white;
+                transform-origin: 0.5 0;
+            }
+            
+            .ml5 .ampersand{
+                font-weight: 400;
+                margin-right: -0.1em;
+                margin-left: -0.1em;
+            }
+            
+            .ml5 .letters{
+                display: inline-block;
+                opacity: 0;
+            }
+            
+            /*網子、人數演變*/
+            .bar{
+                float: none;
+                -webkit-appearance: none;
+                position: absolute;
+                left: 50%;
+                bottom: 50px;
+                margin-left: -200px;
+                margin-top: 0px;
+                width: 400px;
+                background-color: snow;
+            }
+            
+            .people{
+                position: absolute;
+                left: 35%;
+                bottom: 100px;
+                float: none;
+                margin: 0px;
+                width: 100px;
+                height: 120px;
+                background-image: url(littleman.png);
+                background-repeat: no-repeat;
+                background-size: 100px 130px;
+            }
+            
+            #net{
+                float: left;
+                height: 150px;
+                width: 5px;
+                position: absolute;
+                left: 50%;
+                bottom: 90px;
+                margin-left: -1px;
+                margin-bottom: 0px;
+                background-color: black;
+                border-radius: 8px;
+            }
+            
+            #hei{
+                font-weight: bold;
+                font-family: setofont;
+                color: cornflowerblue;
+                position: absolute;
+                bottom: 250px;
+                left: 520px;
+            }
+            
+            #floor{
+                position: absolute;
+                left: 50%;
+                bottom: 90px;
+                margin-left: -400px;
+                width: 800px;
+                height: 1px;
+                background-color: black;
+            }
+            
+            #year{
+                font-size: 60px;
+                font-weight: bold;
+                font-family: setofont;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+            
+            #auto{
+                position: absolute;
+                top: 10px;
+                right: 190px;
+                
+            }
+            
+            #stop{
+                position: absolute;
+                top: 10px;
+                right: 100px;
+            }
+            
+            #restart{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+            
+            #words{
+                width: 800px;
+                height: 50px;
+                position: absolute;
+                top: 200px;
+                left: 50%;
+                margin-left: -400px;
+                font-family: setofont;
+                font-size: 30px;
+                text-align: center;
+            }
+            
+            input[type='range']{
+                outline: none;
+                background-color: #edc;
+                border-radius: 8px;
+                height:5px;
+            }
+            input[type='range']::-webkit-slider-thumb {  
+                -webkit-appearance: none;
+                border: 5px solid black;
+                height: 14px;
+                width: 14px;
+                border-radius: 8px;
+                background: black;
+                cursor: pointer;
+            }
+            input[type="range"]:active::-webkit-slider-thumb:before,
+            input[type="range"]:active::-webkit-slider-thumb:after{
+                top: 6px;
+            }
+            input[type="range"]:active::-webkit-slider-thumb{
+                width:16px;
+                height:16px;
+            }
+            input[type="range"]:active::-webkit-slider-thumb:after {
+                left: 16px;
+            }
+            
+            /*發源*/
+            #spread{
+                background-image: url(map.png);
+                background-size: 1000px 600px;
+            }
+            
+            #usa{
+                text-align: center;
+                width: 40px;
+                height: 25px;
+                position: absolute;
+                top: 115px;
+                left: 130px;
+                color: white;
+                font-family: setofont;
+                border: 2px solid white;
+                border-radius: 15px;
+                font-size: 18px;
+            }
+            
+            #auto_map{
+                position: absolute;
+                bottom: 70px;
+                left: 50px;
+            }
+            
+            #spread_year{
+                display: none;
+                position: absolute;
+                bottom: 90px;
+                right: 150px;
+                background-color: snow;
+                border-radius: 8px;
+                border: 4px solid red;
+                color: black;
+                width: 100px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-family: setofont;
+                font-size: 40px;
+            }
+            
+            /*重要記事*/
+            #timeline_block{
+                overflow-y: visible;
+                position: absolute;
+                bottom: 0px;
+                margin: 0;
+                width: 100%;
+                height: 150px;
+                background-color: #F5F5F5;
+                overflow-x: auto;
+            }
+            #timeline_block::-webkit-scrollbar{
+                display: none;
+            }
+            
+            .timeline_button{
+                position: absolute;
+                z-index: 10;
+                bottom: 0px;
+                margin: 0;
+                height: 150px;
+                width: 50px;
+                background-color: #EDEDED;
+                font-family: setofont;
+                font-size: 60px;
+                line-height: 150px;
+                text-align: center;
+                color: #ABABAB;
+                cursor: pointer;
+            }
+            #timeline_left{
+                left: 0px;
+            }
+            #timeline_right{
+                
+                
+                right: 0px;
+                
+                
+                
+            }
+            .timeline_button:hover{
+                background-color: #D4D4D4;
+            } 
+            
+            #line{
+                position: absolute;
+                left: 0;
+                bottom: 50%;
+                margin-bottom: -2px;
+                width: 5600px;
+                height: 4px;
+                background-color: #655f58;
+            }
+
+            .inner_block{
+                overflow-y: visible;
+                height: 150px;
+                width: 3000px;
+            }
+            
+            .interval{
+                z-index: 1;
+                width: 12px;
+                height: 12px;
+                position: absolute;
+                top: 50%;
+                margin-top: -6px;
+                border-radius: 999em;
+                background-color: #655f58;
+            }
+            .interval:hover{
+                border: 4px solid white;
+                margin-top: -10px;
+                margin-left: -4px;
+            }
+            
+            [data-title]::before{
+                content: attr(data-title);
+                position: absolute;
+                bottom: -28px;
+                display: inline-block;
+                padding: 3px 6px;
+                background: black;
+                color: white;
+                border-radius: 8px;
+                font-size: 17px;
+                font-family: setofont;
+                text-align: center;
+                white-space: nowrap;
+            }
+            
+            .events{
+                display: none;
+                text-align: center;
+                line-height: 80px;
+                font-family: setofont;
+                font-size: 22px;
+                z-index: 10;
+                width: 200px;
+                height: 80px;
+                margin-left: -250px;
+                position: absolute;
+                bottom: 100px;
+                background: white;
+                color: black;
+                border: 2px dashed;
+                border-radius: 6px;
+            }
+            
+            .EventInfo{
+                z-index: 0;
+                width: 500px;
+                height: 500px;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -250px;
+                border-radius: 30%;
+                background-color: rgba(255, 247, 237, 0.7);
+                overflow: hidden;
+            }
+            
+            .EventInfo:after{
+                width: 100%;
+                height: 100%;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -250px;
+                border-radius: 30%;
+                box-shadow: 0 0 30px 10px rgba(255,255,255,.7) inset;
+            }
+            
+            #end_line{
+                z-index: 5;
+                height: 150px;
+                background: black;
+                position: absolute;
+                left: 5600px;
+                width: 200px;
+                color: white;
+            }
+            
+            .textbox{
+                display: none;
+                font-family: setofont;
+                position: absolute;
+                top: 5px;
+                right: 8px;
+                width: 420px;
+                height: 432px;
+                background-color: white;
+                border: 2px solid gray;
+                border-radius: 8px;
+                font-size: 24px;
+                line-height: 60px;
+                text-align: left;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            
+            .textbox h1{
+                font-family: noto;
+                position: relative;
+                left: 10px;
+                text-align: left;
+                font-size: 35px;
+                margin: 0;
+            }
+            
+            /*首頁*/
+            
+            #back{
+                position: absolute;
+                left: 50px;
+                top: 50px;
+                background-color: black;
+            }
+            
+            #back:hover{
+                background-color: #2B2B2B;
+            }
+            
+            
+            
+        </style>
+    </head>
+    
+    <body>
+        <input id="back" type="button" class="button" value="首頁">
+        <div id="toptitle">
+            <input id="div1" type="button" class="button" value="人數、場地演變">
+            <input id="div2" type="button" class="button" value="傳播">
+            <input id="div3" type="button" class="button" value="重要記事">
+        </div>
+        
+        <div id="startword">
+            <h1 class="ml5">
+                <span class="text-wrapper">
+                    <div class="line line1"></div>
+                    <span class="letters letters-left">Click</span>
+                    <span class="letters ampersand">&amp;</span>
+                    <span class="letters letters-right">KnowMore</span>
+                    <div class="line line2"></div>
+                </span>
+            </h1>
+        </div>
+        
+        <div id="change" class="frame">
+            <div id="net" title="I'm the net!"></div>
+            <div id="floor"></div>
+            <div id="year"></div>
+            <div id="hei"></div>
+            <div id="words">1895 排球誕生日 人數無限制</div>
+            <input id="auto" type="button" class="button" value="auto">
+            <input id="stop" type="button" class="button" value="stop">
+            <input id="restart" type="button" class="button" value="restart">
+            <input id="bar" class="bar" type="range" step=".001" min="0" max="100" value="0">
+        </div>
+        
+        <div id="spread" class="frame">
+            <div id="usa">USA</div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="1000px" height="600px">
+                <defs>
+                    <marker id="arrow-r" stroke="red" fill="red" orient="auto" viewBox="0 0 10 10" markerWidth="3" markerHeight="4" markerUnits="strokeWidth" refX="1" refY="5">
+                        <polyline points="0,0 10,5 0,10 1,5" fill="red" />
+                    </marker>
+                </defs>
+                <!--first-->
+                <path id="CAN" d="M-15,43L-15,43Z" marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <path id="CUB" d='M-15,43L-15,43Z' marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <path id="BRA" d="M-15,43L-15,43Z" marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <image id='ball1' href="volley.png" x='-25' y='8' width='10px' height='10px'></image>
+                <image id='ball2' href="volley.png" x='0' y='69' width='10px' height='10px'></image>
+                <image id='ball3' href="volley.png" x='40' y='102' width='10px' height='10px'></image>
+                
+                <!--second-->
+                <path id="IND" d="M-15,43L-15,43Z" marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <image id='ball4' href="volley.png" x='195' y='70' width='10px' height='10px'></image>
+                
+                <!--forth-->
+                <path id="FRA" d="M-15,43L-15,43Z" marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <path id="ITA" d="M-15,43L-15,43Z" marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <image id='ball9' href="volley.png" x='102' y='26' width='10px' height='10px'></image>
+                <image id='ball10' href="volley.png" x='115' y='35' width='10px' height='10px'></image>
+                
+                <!--third-->
+                <path id="CHI" d="M193,70L193,70Z" marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <path id="JAP" d="M193,70L193,70Z" marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <path id="TWN" d="M193,70L193,70Z" marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <path id="RUS" d="M193,70L193,70Z" marker-end="url(#arrow-r)" stroke-width="1.5" stroke="red"></path>
+                <image id='ball5' href="volley.png" x='220' y='40' width='10px' height='10px'></image>
+                <image id='ball6' href="volley.png" x='258' y='40' width='10px' height='10px'></image>
+                <image id='ball7' href="volley.png" x='245' y='60' width='10px' height='10px'></image>
+                <image id='ball8' href="volley.png" x='208' y='2' width='10px' height='10px'></image>
+                
+            </svg>
+            <input id="auto_map" type="button" class="button" value="play">
+            <div id="spread_year"></div>
+        </div>
+        
+        <div id="important" class="frame">
+            <div class="EventInfo"><img src="events/start2.png" id="event_img" width="500px" height="500px"></div>
+            <div id="timeline_block">
+                <div id='inner_block' class="inner_block">
+                    <div id="line"></div>
+                    <div id="end_line"><img src="working.png" height="150px"></div>
+                </div>
+            </div>
+            <div id="timeline_left" class="timeline_button">&laquo;</div>
+            <div id="timeline_right" class="timeline_button">&raquo;</div>
+        </div>
+        
+        
+        
+        <!--start word-->
+        <script>
+            anime.timeline({loop: true})
+            .add({
+                targets: '.ml5 .line',
+                opacity: [0.5,1],
+                scaleX: [0, 1],
+                easing: "easeInOutExpo",
+                duration: 700
+            })
+            .add({
+                targets: '.ml5 .line',
+                duration: 600,
+                easing: "easeOutExpo",
+                translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+            })
+            .add({
+                targets: '.ml5 .letters-left',
+                opacity: [0,1],
+                translateX: ["0.5em", 0],
+                easing: "easeOutExpo",
+                duration: 600,
+                offset: '-=300'
+            })
+            .add({
+                targets: '.ml5 .ampersand',
+                opacity: [0,1],
+                scaleY: [0.5, 1],
+                easing: "easeOutExpo",
+                duration: 600,
+                offset: '-=600'
+            })
+            .add({
+                targets: '.ml5 .letters-right',
+                opacity: [0,1],
+                translateX: ["-0.5em", 0],
+                easing: "easeOutExpo",
+                duration: 600,
+                offset: '-=600'
+            })
+            .add({
+                targets: '.ml5',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+            });
+        </script>
+        
+        <!--div 人數、制度-->
+        <script>
+            set_men(16);
+            var maxindex = 0;
+            
+            function create(index){
+                var p = document.createElement("div");
+                p.setAttribute("class", "people");
+                p.setAttribute("id", "people"+index);
+                if(maxindex < index){maxindex = index;}
+                return p;
+            }
+
+            function set_men(num){
+                text = "people";
+                table = document.getElementById( 'change' );
+                for(var i=1; i<=num; ++i){
+                    p = create(i);
+                    table.appendChild(p);
+                    people = document.getElementById( text+i );
+                    people.style.left = 390-(i*20)+'px';
+                }
+                for(var i=num+1; i<=num*2; ++i){
+                    p = create(i);
+                    table.appendChild(p);
+                    people = document.getElementById( text+i );
+                    people.style.left = 510+((i-num)*20)+'px';
+                    people.style.transform = 'scaleX(-1)';
+                }
+                
+            }
+            
+            var netChange = anime({
+                targets: '#net',
+                height: '230px',
+                direction: 'alternate',
+                easing: 'linear',
+                autoplay: false
+            });
+            
+            var years = anime({
+                targets: '#year',
+                innerHTML: [1895+'s',1980+'s'],
+                easing: 'linear',
+                round: 1,
+                autoplay: false
+            });
+                 
+            var hei = anime({
+                targets: '#hei',
+                easing: 'linear',
+                innerHTML: [1.98 + 'cm', 2.24 + 'cm'],
+                round: 100,
+                bottom: '340px',
+                autoplay: false
+            });
+            
+            var seeking = document.querySelector('#bar');
+            
+            function move(){
+                netChange.seek(netChange.duration * (seeking.value / 100));
+                years.seek(years.duration * (seeking.value / 100));
+                hei.seek(hei.duration * (seeking.value / 100));
+                var y = document.getElementById('year');
+                if(year.innerHTML >= '1913' && year.innerHTML < '1919'){
+                    $('#words').text('1913 排球正式成為亞洲國際賽事 十六人制');
+                }
+                else if(year.innerHTML >= '1919' && year.innerHTML < '1927'){
+                    $('.people').remove();
+                    set_men(12);
+                    $('#words').text('自 1919 亞洲國際排球賽事改為 十二人制');
+                }
+                else if(year.innerHTML >= '1927' && year.innerHTML < '1950'){
+                    $('.people').remove();
+                    set_men(9);
+                    $('#words').text('自 1927 亞洲國際排球賽事改為 九人制');
+                }
+                else if(year.innerHTML >= '1950'){
+                    $('.people').remove();
+                    set_men(6);
+                    $('#words').text('自 1950 亞洲國際排球賽事改為 六人制！！！！');
+                }
+                else{
+                    $('.people').remove();
+                    set_men(16);
+                    $('#words').text('1895 排球誕生日 人數無限制');
+                }
+            }
+            
+            seeking.oninput = move;
+            
+            var time = anime({
+                loop: true,
+                duration: 5000,
+                easing: 'linear',
+                update: function(bar){
+                    seeking.value = time.progress;
+                    move();
+                },
+                autoplay: false
+            });
+            
+            $('#auto').click(function(){
+                time.play();
+                $('#stop').click(function(){
+                    time.pause();
+                });
+                $('#restart').click(function(){
+                    time.restart();
+                });
+            });
+            
+        </script>
+        
+        <!--div 發源-->
+        <script>
+            function setmap(){
+                $('#CAN').attr('d','M-15,43L-15,43Z');
+                $('#CUB').attr('d','M-15,43L-15,43Z');
+                $('#BRA').attr('d','M-15,43L-15,43Z');
+                $('#IND').attr('d','M-15,43L-15,43Z');
+                $('#FRA').attr('d','M-15,43L-15,43Z');
+                $('#ITA').attr('d','M-15,43L-15,43Z');
+                $('#CHI').attr('d','M193,70L193,70Z');
+                $('#TWN').attr('d','M193,70L193,70Z');
+                $('#JAP').attr('d','M193,70L193,70Z');
+                $('#RUS').attr('d','M193,70L193,70Z');
+                $('path').hide();
+                $('image').hide();
+            }
+            
+            function m1(){
+                document.getElementById('spread_year').style.display = 'block';
+                
+                $('#CAN').show();
+                $('#CUB').show();
+                $('#BRA').show();
+                anime({
+                    targets: '#CAN',
+                    d: [{value: 'M-15,43L-15,43Z'},{value: 'M-20,20L-15,43Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball1').show();
+                    },
+                });
+
+                anime({
+                    targets: '#CUB',
+                    d: [{value: 'M-15,43L-15,43Z'},{value: 'M2,66L-15,43Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball2').show();
+                    }
+                });
+                
+                anime({
+                    targets: '#BRA',
+                    d: [{value: 'M-15,43L-15,43Z'},{value: 'M40,100L-15,43Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball3').show();
+                    }
+                });
+                
+                $('#spread_year').text('1895s');
+                
+                window.setTimeout(m2,1000);
+            }
+            
+            function m2(){
+                $('#IND').show();
+                
+                anime({
+                    targets: '#IND',
+                    d: [{value: 'M-15,43L-15,43Z'},{value: 'M193,70L-15,43Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball4').show();
+                    }
+                });
+                
+                $('#spread_year').text('1900s');
+                
+                window.setTimeout(m3,1000);
+            }
+            
+            function m3(){
+                $('#CHI').show();
+                $('#TWN').show();
+                $('#JAP').show();
+                $('#RUS').show();
+                
+                anime({
+                    targets: '#CHI',
+                    d: [{value: 'M193,70L193,70Z'},{value: 'M220,50L193,70Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball5').show();
+                    }
+                });
+                
+                anime({
+                    targets: '#JAP',
+                    d: [{value: 'M193,70L193,70Z'},{value: 'M257,50L193,70Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball6').show();
+                    }
+                });
+                
+                anime({
+                    targets: '#TWN',
+                    d: [{value: 'M193,70L193,70Z'},{value: 'M242,66L193,70Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball7').show();
+                    }
+                });
+                
+                anime({
+                    targets: '#RUS',
+                    d: [{value: 'M193,70L193,70Z'},{value: 'M210,16L193,70Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball8').show();
+                    }
+                });
+                
+                $('#spread_year').text('1913s');
+                
+                window.setTimeout(m4,1000);
+            }
+            
+            function m4(){
+                $('#FRA').show();
+                $('#ITA').show();
+                
+                anime({
+                    targets: '#FRA',
+                    d: [{value: 'M-15,43L-15,43Z'},{value: 'M100,33L-15,43Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball9').show();
+                    }
+                });
+                
+                anime({
+                    targets: '#ITA',
+                    d: [{value: 'M-15,43L-15,43Z'},{value: 'M113,40L-15,43Z'}],
+                    easing: 'easeInOutSine',
+                    duration: 1000,
+                    loop: false,
+                    autoplay: true,
+                    complete: function(){
+                        $('#ball10').show();
+                        document.getElementById('spread_year').style.display = 'none';
+                    }
+                });
+                
+                $('#spread_year').text('1914s');
+                
+            }
+            
+            
+            $('#auto_map').click(function(){
+                setmap();
+                window.setTimeout(m1,200);
+            });
+
+        </script>
+        
+        <!--div 重要記事-->
+        <script>
+            $('#timeline_left').click(function(){
+                $('#timeline_block').animate({ scrollLeft: '-=300px' }, 500);
+            });
+            
+            $('#timeline_right').click(function(){
+                $('#timeline_block').animate({ scrollLeft: '+=300px' }, 500);
+            });
+            
+            
+            var check_year = [ '1895', '1896', '1900', '1916', '1917', '1920', '1922', '1928', '1947', '1949', '1952', '1964', '1965', '1970', '1973', '1977', '1983', '1986', '1989', '1990', '1991', '1993', '1998', '2000', '2002', '2018' ];
+            
+            function newdot(index){
+                var dot = document.createElement("div");
+                dot.setAttribute("class","interval");
+                dot.setAttribute("id","dot"+index);
+                dot.setAttribute("data-title",check_year[index-1]);
+                dot.setAttribute("onmouseover","displayWord(" + check_year[index-1] + ")");
+                dot.setAttribute("onmouseout","vanishWord(" + check_year[index-1] + ")");
+                dot.setAttribute("onmousemove","displayWord(" + check_year[index-1] + ")");
+                dot.setAttribute("onclick","showText(" + check_year[index-1] + ")");
+                return dot;
+            }
+            
+            function new_wordblock(index){
+                var word = document.createElement("div");
+                word.setAttribute("id",index);
+                word.setAttribute("class","events");
+                return word;
+            }
+            
+            function textbox(index){
+                var box = document.createElement("div");
+                box.setAttribute("id",index + '_t');
+                box.setAttribute("class","textbox");
+                box.style.zIndex = '0';
+                return box;
+            }
+            
+            function set_dot(){
+                var timeline_block = document.getElementById('inner_block');
+                var main = document.getElementById('important');
+                //console.log(check_year.length);
+                for(var i=1; i<=check_year.length; i++){
+                    var d = newdot(i);
+                    d.style.left = 200*i + 'px';
+                    timeline_block.appendChild(d);
+                    
+                    var word = new_wordblock(check_year[i-1]);
+                    word.style.left = 200*i + 'px';
+                    main.appendChild(word);
+                    
+                    var box = textbox(check_year[i-1]);
+                    main.appendChild(box);
+                }
+                $('#1895').text("排球創始日");
+                $('#1896').text("第一場公開賽!");
+                $('#1900').text("專用球誕生了");
+                $('#1916').text("定制'舉球攻擊'模式");
+                $('#1917').text("21分制改為15分制");
+                $('#1920').text("定制新規則");
+                $('#1922').text("首屆YMCA美國錦標賽");
+                $('#1928').text("成立全美排球協會");
+                $('#1947').text("成立FIVB");
+                $('#1949').text("首屆男子世錦賽");
+                $('#1952').text("首屆女子世錦賽");
+                $('#1964').text("排球列入奧運項目！");
+                $('#1965').text("首屆男子世界盃");
+                $('#1970').text("非洲國家加入比賽");
+                $('#1973').text("首屆女子世界盃");
+                $('#1977').text("首屆U21男子世界盃");
+                $('#1983').text("成立AVP職業排球");
+                $('#1986').text("成立WPAV女子職排");
+                $('#1989').text("首屆排聯世俱杯(男)");
+                $('#1990').text("首屆世界聯賽");
+                $('#1991').text("首屆排聯世俱杯(女)");
+                $('#1993').text("首屆世界大冠軍杯");
+                $('#1998').text("定制'落地得分制'");
+                $('#2000').text("'落地得分制'確定");
+                $('#2002').text("世錦賽增為24隊");
+                $('#2018').text("首屆國家聯賽");
+            }
+            
+            var lastpic = 'events/start2.png';
+            var lastbox = '';
+            
+            function displayWord(index){
+                var word = document.getElementById(index);
+                var x = event.clientX;
+                word.style.left = x + 'px';
+                word.style.display = 'block';
+                
+                var pic = document.getElementById('event_img');
+                pic.setAttribute("src", "events/" + index + ".png");
+            }
+            
+            function vanishWord(index){
+                var word = document.getElementById(index);
+                word.style.display = 'none';
+                $('#event_img').attr("src", lastpic);
+            }
+            
+            function showText(index){
+                lastpic = "events/" + index + ".png";
+                if(lastbox != ''){
+                    document.getElementById(lastbox).style.display = 'none';
+                }
+                lastbox = index + '_t';
+                var box = document.getElementById(index + '_t');
+                $('#event_img').attr("src", "events/" + index + ".png");
+                var move = anime({
+                    targets: '.EventInfo',
+                    left: ['500px','250px'],
+                    easing: 'linear',
+                    duration: 500,
+                    autoplay: true,
+                    loop: false,
+                    complete: function(){
+                        $('#'+index + '_t').fadeIn("slow");
+                    },
+                });
+            }
+            
+            set_dot();
+
+        </script>
+        
+        <script type="text/javascript" src="script.js"></script>
+        
+        <!--top title-->
+        <script>
+            $('#back').click(function(){
+                window.location.href = "index.html";
+            })
+            $('#div1').click(function(){
+                reset();
+                $('#startword').hide();
+                $('.frame').hide();
+                $('#change').fadeIn("slow");
+            });
+            $('#div2').click(function(){
+                reset();
+                $('#startword').hide();
+                $('.frame').hide();
+                $('#spread').fadeIn("slow");
+            });
+            $('#div3').click(function(){
+                reset();
+                $('#startword').hide();
+                $('.frame').hide();
+                $('#important').fadeIn("slow");
+            });
+        </script>
+        
+        <!--reset-->
+        <script>
+            function reset(){
+                time.seek(0);
+                setmap();
+                $(".EventInfo").css("left","50%");
+                $('#event_img').attr("src","events/start2.png");
+                if(lastbox != ''){
+                    document.getElementById(lastbox).style.display = 'none';
+                }
+                lastpic = 'events/start2.png';
+                lastbox = '';
+            }
+        </script>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> map </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/datamaps/0.5.7/datamaps.all.min.js"></script>
+        <style>
+            body{
+                background-color: azure;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="container" style="position: absolute; width: 100%; height: 100%; margin: 0px auto;"></div>
+        <script>
+            
+            var fills = {
+              main: '#0000AA',
+              defaultFill: '#00AAAA',
+            };
+
+            var countrys = [ 'RUS','CHN','JPN','KOR','TWN','SRB','ITA','BRA','USA','NLD','TUR' ];
+            
+            
+            var map = new Datamap({
+                element: document.getElementById('container'),
+                scope: 'world',
+                fills: fills,
+                geographyConfig: {
+                    highlightOnHover: true,
+                },
+                done: function(datamap) {
+                    datamap.updateChoropleth({
+                        RUS: {fillKey: 'main'},
+                        CHN: {fillKey: 'main'},
+                        JPN: {fillKey: 'main'},
+                        KOR: {fillKey: 'main'},
+                        TWN: {fillKey: 'main'},
+                        SRB: {fillKey: 'main'},
+                        ITA: {fillKey: 'main'},
+                        BRA: {fillKey: 'main'},
+                        USA: {fillKey: 'main'},
+                        NLD: {fillKey: 'main'},
+                        TUR: {fillKey: 'main'}
+                    });
+                    datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
+                        var state_id = geography.id;
+                        if( countrys.includes(state_id) ){
+                            window.location.href = '/teams/' + state_id + '.html';
+                        }
+                        else{
+                            window.alert("Oops! Still waiting for new info!");
+                        }
+                    });
+                }
+            });
+            
+            
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

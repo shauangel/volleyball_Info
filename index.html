@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>VB Info Station </title>
+        <style>
+            @font-face{
+                font-family: setofont;
+                src: url(setofont.ttf)
+            }
+            
+            #ball{
+                position: absolute;
+                bottom: 150px;
+                right: 50%;
+                z-index: 10;
+            }
+            
+            #theme1{
+                width: 180px;
+                height: 450px;
+                background-image: url(ballon-y.png);
+                background-repeat: no-repeat;
+                background-size: 180px 450px;
+                position: absolute;
+                left: 10%;
+                top: 90px;
+                padding: 70px 0;
+                text-align: center;
+                font-size: 35px;
+                font-family: setofont;
+            }
+            
+            #theme2{
+                width: 180px;
+                height: 450px;
+                background-image: url(ballon-b.png);
+                background-repeat: no-repeat;
+                background-size: 180px 450px;
+                position: absolute;
+                left: 40%;
+                top: 30px;
+                padding: 70px 0;
+                text-align: center;
+                font-size: 35px;
+                font-family: setofont;
+            }
+            
+            #theme3{
+                width: 180px;
+                height: 450px;
+                background-image: url(ballon-r.png);
+                background-repeat: no-repeat;
+                background-size: 180px 450px;
+                position: absolute;
+                left: 80%;
+                top: 90px;
+                padding: 70px 0;
+                text-align: center;
+                font-size: 35px;
+                font-family: setofont;
+            }
+            
+            #mainTitle{
+                position: absolute;
+                top: 48%;
+                left: -2%;
+                width: 100%;
+                text-align: center;
+                font-size: 80px;
+                font-family: setofont;
+            }
+            
+            #ppt img{
+                width: 80px;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+        </style>
+        <script type="text/javascript" src="anime.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="ball" >
+            <img src="volley.png" width="100px">
+        </div>
+        
+        <div id="theme1" onclick="serve('13','90','1')">世界地圖</div>
+        
+        <div id="theme2" onclick="serve('40','30','2')">發展史</div>
+        
+        <div id="theme3" onclick="serve('80','90','3')">規則</div>
+        
+        <div id="mainTitle">世界女排情報網</div>
+        
+        <div id="ppt" onclick="toPPT()"><a href="vb.pptx" download="vb.pptx"><img src="bomb.png"></a></div>
+        
+        <script>
+            function serve(left,top,ind){
+                document.getElementById('mainTitle').style.display = 'none';
+                bounceUp.pause();
+                bounceDown.pause();
+                var server = anime({
+                    targets: '#ball',
+                    left: left+'%',
+                    top: top+'px',
+                    duration: 500,
+                    complete: function(){
+                        theme = document.getElementById('theme'+ind);
+                        theme.innerHTML = "";
+                        theme.style.background = "url(boom.png)";
+                        theme.style.backgroundRepeat = "no-repeat";
+                        theme.style.backgroundSize = "200px 200px";
+                        theme.style.width = "200px";
+                        theme.style.height = "200px";
+                        window.location.href = 'theme'+ind+'.html';
+                    },
+                });
+            }
+            
+            var bounceUp = anime({
+              autoplay: false,    //We don't want to immediately start the animation
+              targets:  '#ball',  //target the div '#ball'
+              translateY: {
+                value:    ['160px', '0px'], //When bouncing up, start at 160px and end at 0px
+                duration: 600,
+                easing:   'easeOutQuad',
+              },
+              complete:  function(){ bounceDown.play() }, //Function encapsulation is necessary, otherwise we run into not defined error
+            });
+
+            var bounceDown = anime({
+              autoplay: false,    //See similar comments above
+              targets:  '#ball',
+              translateY: {
+                value:    ['0px', '160px'], //When bouncing down, start at 0px and end at 160px
+                duration: 600,
+                easing:   'easeInQuad',
+              },
+              complete:  function(){ bounceUp.play() }, //After we bounce down, start the bounce up animation
+            });
+
+            bounceDown.play(); //Start the animation!
+            
+            var ballon1 = anime({
+                targets: '#theme1',
+                translateY: 10,
+                direction: 'alternate',
+                loop: true,
+                easing: 'linear'
+            });
+            
+            var ballon2 = anime({
+                targets: '#theme2',
+                delay: '100',
+                translateY: 10,
+                direction: 'alternate',
+                loop: true,
+                easing: 'linear'
+            });
+            
+            var ballon3 = anime({
+                targets: '#theme3',
+                delay: '-100',
+                translateY: 10,
+                direction: 'alternate',
+                loop: true,
+                easing: 'linear'
+            });
+            
+            function toPPT(){
+                bounceUp.pause();
+                bounceDown.pause();
+                vball = document.getElementById('ball');
+                vball.style.background = "url(boom.png)";
+                vball.style.backgroundRepeat = "no-repeat";
+                vball.style.backgroundSize = "200px 200px";
+                vball.style.width = "200px";
+                vball.style.height = "200px";
+                window.setInterval(function(){
+                    vball.style.backgroundImage = "";
+                    vball.style.backgroundRepeat = "";
+                    vball.style.backgroundSize = "";
+                    vball.style.width = "";
+                    vball.style.height = "";
+                    bounceDown.play();
+                }, 5000);
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

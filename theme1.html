@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> 世界地圖 </title>
+    </head>
+    
+    <style>
+        @font-face{
+            font-family: setofont;
+            src: url(setofont.ttf)
+        }
+        
+        nav{
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            float: left;
+            width: 5%;
+            padding: 12px;
+            font-family: setofont;
+        }
+        
+        nav:hover{
+            color: black;
+            background-color: ghostwhite;
+            display: block;
+        }
+        
+        nav ul{
+            display: none;
+            position: absolute;
+            width: inherit;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav:hover ul{
+            display: block;
+        }
+        
+        nav ul li{
+            font-size: 14px;
+            color: white;
+            font-weight: 100;
+            background-color: black;
+            list-style: none;
+            text-align: center;
+            border-top: 2px solid white;
+            padding-top: 10px;
+            width: 100%;
+            height: 30px;
+        }
+        
+        nav ul li:hover{
+            color: black;
+            font-weight: bold;
+            background-color: whitesmoke;
+        }
+        
+        #navbar{
+            height: 50px;
+            background-color: #252525;
+        }
+    </style>
+    
+    <body>
+        <div id="navbar">
+            <label>
+                <a href="index.html">
+                    <nav>首頁</nav>
+                </a>
+            </label>
+
+            <nav>全部
+                <ul>
+                    <li onclick="info('TWN')">臺灣</li>
+                    <li onclick="info('JPN')">日本</li>
+                    <li onclick="info('KOR')">韓國</li>
+                    <li onclick="info('CHN')">中國</li>
+                    <li onclick="info('USA')">美國</li>
+                    <li onclick="info('BRA')">巴西</li>
+                    <li onclick="info('RUS')">俄羅斯</li>
+                    <li onclick="info('TUR')">土耳其</li>
+                    <li onclick="info('SRB')">塞爾維亞</li>
+                    <li onclick="info('ITA')">義大利</li>
+                    <li onclick="info('NLD')">荷蘭</li>
+                </ul>
+            </nav>
+
+            <nav>亞洲
+                <ul>
+                    <li onclick="info('TWN')">臺灣</li>
+                    <li onclick="info('JPN')">日本</li>
+                    <li onclick="info('KOR')">韓國</li>
+                    <li onclick="info('CHN')">中國</li> 
+                    <li onclick="info('RUS')">俄羅斯</li>
+                    <li onclick="info('TUR')">土耳其</li>
+                </ul>
+            </nav>
+
+            <nav>歐洲
+                <ul>
+                    <li onclick="info('SRB')">塞爾維亞</li>
+                    <li onclick="info('ITA')">義大利</li>
+                    <li onclick="info('NLD')">荷蘭</li>
+                </ul>
+            </nav>
+
+            <nav>美洲
+                <ul>
+                    <li onclick="info('USA')">美國</li>
+                    <li onclick="info('BRA')">巴西</li>
+                </ul>
+            </nav>
+
+            <nav>非洲
+            </nav>
+
+            <nav>大洋洲
+            </nav>
+            
+            <nav onclick="init()">地圖
+            </nav>
+        </div>
+        
+        <iframe id="embed" src="map.html" width="100%" height="700px"></iframe>
+        
+        <script>
+            function init(){
+                web = document.getElementById('embed');
+                web.setAttribute('src', 'map.html');
+            }
+            
+            function info(filename){
+                web = document.getElementById('embed');
+                web.setAttribute('src', '/teams/' + filename + '.html');
+            }
+        </script>
+    </body>
+    
+</html>
