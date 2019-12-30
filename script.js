@@ -13,7 +13,7 @@ $('#1916_t').append(t_1916);
 var t_1917 = "<h1>1917s 計分制、得分制的變動：</h1>&nbsp;&nbsp;&nbsp;&nbsp;一開始，排球採<mark class='yellow'>21分制</mark>(同網球)，1917年時，改為<mark class='yellow'>15分發球得分制</mark>。";
 $('#1917_t').append(t_1917);
 
-var t_1920 = "<h1>1920s 新的場上規則：</h1>1.一邊<mark class='yellow'>三次擊球</mark>限制<br>2.<mark class='yellow'>後排攻擊</mark>不可踩三米線<br>3.一人<mark class='yellow'>不可二次擊球</mark><br>4.壓線得分<br>5.發球不可越界，且必須以<mark class='yellow'>撞擊</mark>發球";
+var t_1920 = "<h1>1920s 新的場上規則：</h1>1.一邊<mark class='yellow'>三次擊球</mark>限制<br>2.<mark class='yellow'>後排攻擊</mark>不可跑過三米線<br>3.一人<mark class='yellow'>不可二次連擊</mark><br>4.壓線得分<br>5.發球不可越界，且必須以<mark class='yellow'>撞擊</mark>發球";
 $('#1920_t').append(t_1920);
 
 var t_1922 = "<h1>1922s 首屆YMCA美國錦標賽：</h1>&nbsp;&nbsp;&nbsp;&nbsp;<mark class='yellow'>第一屆YMCA美國錦標賽</mark>在<mark class='yellow'>紐約布鲁克林</mark>開打，一共有來自11個不同洲的27支隊伍參賽。<br><img src='events/ymca_1922.jpg' height='120px' style='float: right;'>";
